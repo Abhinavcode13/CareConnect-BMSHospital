@@ -4,7 +4,7 @@ FROM phpmyadmin/phpmyadmin
 # Optionally, you can set environment variables or make other customizations here
 
 # Expose the port on which phpMyAdmin runs (usually 80)
-EXPOSE 9000
+EXPOSE 8000
 
 # Start phpMyAdmin when the container starts
 CMD ["apache2-foreground"]
