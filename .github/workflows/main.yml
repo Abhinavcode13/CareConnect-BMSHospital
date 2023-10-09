@@ -27,7 +27,7 @@ jobs:
     - name: Build and Push MySQL-DB image
       run: |
         docker-compose build mysql_db
-        docker-compose push mysqlidb
+        docker-compose push mysql_db
 
     - name: Build and Push PHPMyAdmin image
       run: |
