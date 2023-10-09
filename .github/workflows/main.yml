@@ -17,12 +17,12 @@ jobs:
       uses: docker/login-action@v1
       with:
         username: aadish1206
-        password: Aadish12@
+        password: "Aadish12@"
 
     - name: Build and Push PHP-Env image
       run: |
-        docker-compose -f =docker-compose.yaml build php-env
-        docker-compose -f =docker-compose.yaml push php-env
+        docker-compose -f docker-compose.yaml build php-env
+        docker-compose -f docker-compose.yaml push php-env
 
     - name: Build and Push MySQL-DB image
       run: |
