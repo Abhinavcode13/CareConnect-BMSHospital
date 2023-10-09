@@ -3,7 +3,7 @@ name: Docker Build and Push
 on:
   push:
     branches:
-      - master
+      - main  # Adjust this to your main branch name
 
 jobs:
   build_and_push:
@@ -19,29 +19,17 @@ jobs:
         username: aadish1206
         password: "Aadish12@"
 
-    - name: Build and Push PHP-Env image
+    - name: Build and Push php-env image
       run: |
-        docker-compose -f docker-compose.yaml build php-env
-        docker-compose -f docker-compose.yaml push php-env
+        docker build -t aadish1206/php-env:latest -f docker-compose.yaml/php-env .
+        docker push aadish1206/php-env:latest
 
-    - name: Build and Push MySQL-DB image
+    - name: Build and Push mysql_db image
       run: |
-        docker-compose -f docker-compose.yaml build mysql_db
-        docker-compose -f docker-compose.yaml push mysql_db
+        docker build -t aadish1206/mysql_db:latest -f docker-compose.yaml/mysql_db .
+        docker push aadish1206/mysql_db:latest
 
-    - name: Build and Push PHPMyAdmin image
+    - name: Build and Push phpmyadmin image
       run: |
-        docker-compose -f docker-compose.yaml build phpmyadmin
-        docker-compose docker-compose.yaml push phpmyadmin
-
-    - name: Run Docker Compose
-      run: |
-        docker-compose -f docker-compose.yaml up --build -d
-
-    - name: Wait for services to start
-      run: sleep 10  # Adjust the wait time as needed
-      
-    - name: Stop Docker Compose
-      run: |
-        docker-compose -f docker-compose.yaml down
-
+        docker build -t aadish1206/phpmyadmin:latest -f docker-compose.yaml/phpmyadmin .
+        docker push aadish1206/phpmyadmin:latest
