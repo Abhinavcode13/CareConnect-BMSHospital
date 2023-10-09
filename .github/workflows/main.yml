@@ -45,6 +45,3 @@ jobs:
       run: |
         docker-compose -f docker-compose.yaml down
 
-
-
-docker-compose.yaml
