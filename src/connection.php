@@ -3,7 +3,7 @@ $host = "mysql_db";
 $username = "root";
 $password = "root";
 $db_name = "edoc";
-$port = 3306; // Default MySQL port
+$port = 3307; // Default MySQL port
 
 $database = new mysqli($host, $username, $password, $db_name, $port);
 
