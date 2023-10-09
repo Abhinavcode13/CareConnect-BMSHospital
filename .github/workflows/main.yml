@@ -19,17 +19,7 @@ jobs:
         username: aadish1206
         password: "Aadish12@"
 
-    - name: Build and Push php-env image
+    - name: Build and Push Docker Images
       run: |
-        docker build -t aadish1206/php-env:latest -f docker-compose.yaml/php-env .
-        docker push aadish1206/php-env:latest
-
-    - name: Build and Push mysql_db image
-      run: |
-        docker build -t aadish1206/mysql_db:latest -f docker-compose.yaml/mysql_db .
-        docker push aadish1206/mysql_db:latest
-
-    - name: Build and Push phpmyadmin image
-      run: |
-        docker build -t aadish1206/phpmyadmin:latest -f docker-compose.yaml/phpmyadmin .
-        docker push aadish1206/phpmyadmin:latest
+        docker-compose -f docker-compose.yaml build
+        docker-compose -f docker-compose.yaml push
