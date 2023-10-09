@@ -28,12 +28,12 @@ jobs:
 
     - name: Build and Push MySQL-DB image
       run: |
-        docker build -t aadish1206/my-mysql-db-image -f Dockerfile.mysql_db .
+        docker build -t aadish1206/mysql-db:latest -f Dockerfile.mysql_db .
         docker push aadish1206/mysql_db:latest
 
     - name: Build and Push PHPMyAdmin image
       run: |
-        docker build -t aadish1206/my-phpmyadmin-image -f Dockerfile.phpmyadmin .
+        docker build -t aadish1206/phpmyadmin:latest -f Dockerfile.phpmyadmin .
         docker push aadish1206/phpmyadmin:latest
 
     - name: Run Docker Compose
