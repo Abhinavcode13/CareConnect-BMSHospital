@@ -23,17 +23,17 @@ jobs:
     - name: Build and Push PHP-Env image
       run: |
         docker build -t aadish1206/my-php-env-image -f Dockerfile.php-env .
-        docker push aadish1206/php-env:latest
+        docker push my-php-env-image/php-env:latest
 
     - name: Build and Push MySQL-DB image
       run: |
         docker build -t aadish1206/my-mysql-db-image -f Dockerfile.mysql_db .
-        docker push aadish1206/mysql_db:latest
+        docker push my-mysql-db-image/mysql_db:latest
 
     - name: Build and Push PHPMyAdmin image
       run: |
         docker build -t aadish1206/my-phpmyadmin-image -f Dockerfile.phpmyadmin .
-        docker push aadish1206/phpmyadmin:latest
+        docker push my-phpmyadmin-image/phpmyadmin:latest
 
     - name: Run Docker Compose
       run: docker-compose up --build -d
