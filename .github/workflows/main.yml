@@ -22,8 +22,8 @@ jobs:
 
     - name: Build and Push PHP-Env image
       run: |
-        docker build -t aadish1206/my-php-env-image -f Dockerfile.php-env .
-        docker push my-php-env-image/php-env:latest
+        docker build -t aadish1206/my-php-env -f Dockerfile.php-env .
+        docker push my-php-env/php-env:latest
 
     - name: Build and Push MySQL-DB image
       run: |
