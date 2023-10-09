@@ -1,18 +1,18 @@
-# Use an official PHP base image as the base image
+# Use an official PHP base image
 FROM php:latest
 
-# Optionally, set environment variables and install additional PHP extensions
+# Optionally, set environment variables and install PHP extensions if needed
 # ENV PHP_ENV_VAR=value
 # RUN docker-php-ext-install extension_name
 
 # Set the working directory inside the container
 WORKDIR /var/www/html
 
-# Optionally, copy your PHP application code into the container
-# COPY ./app/ /var/www/html/
+# Copy your PHP application code into the container
+COPY ./src/ /var/www/html/
 
-# Expose the port on which your PHP application runs (e.g., 80 for HTTP)
-EXPOSE 9000
+# Expose the port on which your PHP application runs (e.g., 80)
+EXPOSE 80
 
-# Start your PHP application (you may need to adjust the command depending on your application)
+# Start your PHP application (adjust the command as needed)
 CMD ["php", "-S", "0.0.0.0:80"]
