@@ -28,7 +28,7 @@ jobs:
 
     - name: Build and Push MySQL-DB image
       run: |
-        docker build -t aadish1206/mysql-db:latest -f Dockerfile.mysql_db .
+        docker build -t aadish1206/mysql_db:latest -f Dockerfile.mysql_db .
         docker push aadish1206/mysql_db:latest
 
     - name: Build and Push PHPMyAdmin image
